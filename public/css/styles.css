@@ -1,0 +1,263 @@
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+span {
+  padding: 0 0 0 15px;
+}
+
+.grow {
+  transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+  transform: scale(1.5);
+}
+
+.shrink {
+  transition: all .2s ease-in-out;
+}
+
+.shrink:hover {
+  transform: scale(0.95);
+}
+
+.desktop {
+  margin-top: 8px;
+  margin-left: 15px;
+}
+
+.mobile {
+  margin-top: 8px;
+  margin-left: 15px;
+}
+
+/* Reactive Conditions */
+@media (max-width: 815px) {
+
+  /* mobile CSS: hide .desktop div */
+  .desktop {
+    display: none;
+  }
+
+  .nav-link:hover {
+    color: #fff;
+    background-color: #000;
+  }
+}
+
+@media (min-width: 815px) {
+
+  /* desktop CSS: hide .mobile div */
+  .mobile {
+    display: none;
+  }
+
+  .nav-link:hover {
+    color: #000;
+  }
+}
+
+@media (max-width: 1199px) {
+
+  /* mobile CSS: hide .desktop div */
+  .nav-link {
+    transition: all .2s ease-in-out;
+  }
+
+  .nav-link:hover {
+    color: #fff;
+    background-color: #000;
+    transform: scale(0.975);
+  }
+}
+
+@media (min-width: 1199px) {
+
+  /* desktop CSS: hide .mobile div */
+  .nav-link {
+    transition: all .2s ease-in-out;
+  }
+
+  .nav-link:hover {
+    color: #000;
+    transform: scale(1.05);
+  }
+}
+
+/* Navigation Bar Section */
+#navbarSupportedContent {
+  margin-top: 8px;
+}
+
+.navbar {
+  padding: 0;
+}
+
+.navbar-nav {
+  margin-right: 7px;
+}
+
+.navbar-brand {
+  padding: 0;
+}
+
+.navbar-toggler {
+  margin-top: 8px;
+  margin-right: 15px;
+  transition: all .2s ease-in-out;
+}
+
+.navbar-toggler:hover {
+  color: #000;
+  transform: scale(1.1);
+}
+
+.navbar-toggler-icon:hover {
+  color: #000;
+}
+
+.nav-link {
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  padding-left: 15px;
+  margin: auto;
+}
+
+.webName {
+  font-family: "Merriweather";
+  font-size: 1.75rem;
+  font-weight: 900;
+}
+
+/* Live Clock Section */
+#timeDateSection {
+  background-color: #212121;
+  margin-top: 8px;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.datetime {
+  color: #fff;
+}
+
+/* Date and Time Picker Section */
+::-webkit-datetime-edit {
+  padding: 0;
+  align: center;
+}
+
+::-webkit-datetime-edit-fields-wrapper {
+  background: #fff;
+  border: 1px solid;
+  align: center;
+}
+
+::-webkit-datetime-edit-text {
+  color: #fff;
+  padding: 0 0.3em;
+}
+
+::-webkit-datetime-edit-month-field {
+  color: #000;
+  text-transform: uppercase;
+}
+
+::-webkit-datetime-edit-day-field {
+  color: #000;
+  text-transform: uppercase;
+}
+
+::-webkit-datetime-edit-year-field {
+  color: #000;
+  text-transform: uppercase;
+}
+
+::-webkit-inner-spin-button {
+  display: none;
+}
+
+::-webkit-inner-spin-button:hover {
+  display: none;
+}
+
+::-webkit-calendar-picker-indicator {
+  color: #000;
+  transition: all .2s ease-in-out;
+}
+
+::-webkit-calendar-picker-indicator:hover {
+  transform: scale(1.25);
+}
+
+/* Location Section */
+#searchAndLogin .btn-group {
+  width: 100%;
+}
+
+#searchAndLogin .btn-group .btn {
+  width: 90%;
+}
+
+#searchAndLogin .btn-group .btn.dropdown-toggle {
+  width: 10%;
+}
+
+#searchAndLogin .btn-group .dropdown-menu {
+  width: 100%;
+}
+
+/* Partners Section */
+#partners {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/* TESTING CODE */
+#section {
+  background-color: #CDBE78;
+  padding: 5rem 0;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.left-container {
+  padding: 0;
+}
+
+.right-container {
+  padding: 0;
+}
+
+.row {
+  margin: 0 15px 0 15px;
+}
+
+/* Footer Section */
+#footer {
+  text-align: center;
+  background-color: #212121;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.footicon {
+  color: #fff;
+  margin: 25px 25px;
+}
+
+.footicon:hover {
+  color: #fff;
+}

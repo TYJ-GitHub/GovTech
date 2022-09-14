@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather Forecast & Traffic Cam</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Merriweather:wght@300;400;700;900&family=Montserrat:wght@100;200;300;400;700&family=Open+Sans:ital@1&family=Playfair+Display:wght@400;700&family=Roboto:wght@100;400;700&family=Ubuntu:wght@300;400;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap Scripts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="images/Web Icon.jpg">
+
+</head>
+
+<body onload="initClock();">
+  <!-- JavaScript-Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  <!-- JavaScript-fontawesome -->
+  <script src="https://kit.fontawesome.com/8958983de7.js" crossorigin="anonymous"></script>
+  <!-- Navigation Bar -->
+  <section id="title">
+    <nav class="navbar bg-light navbar-expand-xl navbar-light">
+      <div class="desktop">
+        <a class="navbar-brand webName" href=""><img src="images/Web Icon.jpg" alt="webIcon" height="50" width="50"><span>WEATHER FORECAST AND TRAFFIC CAM</span></a>
+      </div>
+      <div class="mobile">
+        <a class="navbar-brand webName" href=""><img src="images/Web Icon.jpg" alt="webIcon" height="50" width="50"><span>W F T C</span></a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="">Date and Time</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Weather</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Location</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Partners</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </section>
+
+  <!-- Time and Date -->
+  <section id="timeDateSection">
+    <div class="datetime">
+      <div class="time">
+        <span id="hour">00</span>:
+        <span id="minutes">00</span>:
+        <span id="seconds">00</span>
+        <span id="period">AM</span>
+      </div>
+      <div class="date">
+        <span id="dayname">Day</span>,
+        <span id="month">Month</span>
+        <span id="daynum">00</span>,
+        <span id="year">Year</span>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Time and Date Selector -->
+  <section id="section">
+    <div class="row">
+      <div class="left-container col-lg-8 col-md-8">
+        <div class="yellow" id="datetimepicker1">
+          Date and Time Picker Container
+          <form action="/" method="post">
+            <div class="row">
+              <div class="datepick col-lg-6">
+                <label for="pickedDate">Select Date</label>
+                <!-- onchange="this.form.submit() => submit when input changes -->
+                <% if (typeof data != "undefined") { %>
+                <input value="<%=data.date%>" style="font-size: 2rem" id="pickedDate" class="form-control" type="date" name="selecteddate" onchange="this.form.submit()" min="2016-03-01" max="2000-01-13" />
+                <output id="pickedDateSelected" name="datespan"><%=data.datespan%></output>
+                <% }else{ %>
+                <input style="font-size: 2rem" id="pickedDate" class="form-control" type="date" name="selecteddate" onchange="this.form.submit()" min="2016-03-01" max="2000-01-13" />
+                <output id="pickedDateSelected" name="datespan"></output>
+                <% } %>
+              </div>
+              <div class="datepick col-lg-6">
+                <label for="pickedTime">Select Time</label>
+                <% if (typeof data != "undefined") { %>
+                <input value="<%=data.time %>" style="font-size: 2rem" id="pickedTime" class="form-control" type="time" name="selectedtime" onchange="this.form.submit()" max="22:00" />
+                <output id="pickedTimeSelected" name="timespan"><%=data.timespan%></output>
+                <% } else{ %>
+                <input style="font-size: 2rem" id="pickedTime" class="form-control" type="time" name="selectedtime" onchange="this.form.submit()" max="22:00" />
+                <output id="pickedTimeSelected" name="timespan"></output>
+                <% } %>
+
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="green">
+          Location Picker Container
+          <div style="padding: 0 27px;" class="container-fluid">
+            <div class="col-lg-12">
+              <label for="pickedLocation">Select Location</label>
+              <select class="form-select" aria-label="Default select example" id="dropDownList" name="location">
+              <% if (typeof data != "undefined") { %>
+                <% for (var locImage of data.locImageArray) { %>
+                  <option value=""><%=locImage.address%></option>
+                <% } %>
+              <% } %>
+              </select>
+            </div>
+            <span id="pickedTimeSelected"></span>
+          </div>
+        </div>
+      </div>
+      <div class="right-container col-lg-4 col-md-4 red">
+        Weather Container
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners -->
+  <section id="partners">
+    a
+  </section>
+
+  <!-- Footer -->
+  <section id="footer">
+    <p style="color:white; margin:0">Contact Us</p>
+    <i class="grow footicon fa-brands fa-facebook-f"></i>
+    <i class="grow footicon fa-brands fa-twitter"></i>
+    <i class="grow footicon fa-brands fa-instagram"></i>
+    <i class="grow footicon fa-brands fa-linkedin-in"></i>
+    <i class="grow footicon fa-brands fa-youtube"></i>
+    <i class="grow footicon fa-brands fa-telegram"></i>
+    <i class="grow footicon fa-brands fa-tiktok"></i>
+    <i class="grow footicon fa-solid fa-rss"></i>
+    <p style="color:white; font-size: 0.75rem">© Copyright 2022 Weather Forecast and Traffic Cam</p>
+  </section>
+
+  </script>
+</body>
+<footer>
+  <!-- JavaScript-External JS -->
+  <script src="js/main.js" charset="utf-8"></script>
+</footer>
+
+</html>
