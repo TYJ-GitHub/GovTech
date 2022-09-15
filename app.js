@@ -242,6 +242,7 @@ app.get("/getimages", (req,res) =>{
 app.get("/getweather", (req, res) =>{
   let key = 'AIzaSyDK7QnWVcLyjIvPrQNOatDO3nb0aWHQWm0';
   let selectedLoc = req.query.q
+
   axios.get("https://maps.googleapis.com/maps/api/geocode/json",{
     params:{
       address: selectedLoc,
@@ -262,13 +263,13 @@ app.get("/getweather", (req, res) =>{
         forecast = weatherArray[i].forecast;
       }
     }
+    console.log(loc, forecast)
     res.json({closestLocation: loc, locationForecast: forecast})
 
   }).catch(function(err){
     console.log(err)
   })
 })
-
 
 
 app.listen(3000, function() {

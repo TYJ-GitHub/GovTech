@@ -158,8 +158,12 @@
       </div>
       <div class="right-container col-lg-4 col-md-4 red">
         Weather Container
-        <div id="locationHeader"></div>
-        <div id="forecastHeader"></div>
+        <div id="locationHeader">
+          <h1 class="locationHead"></h1>
+        </div>
+        <div id="forecastHeader">
+          <h1 class="forecastHead"></h1>
+        </div>
       </div>
     </div>
   </section>
@@ -214,15 +218,17 @@
     }
 
     function getWeather(){
+      document.querySelector(".locationHead").remove();
+      document.querySelector(".forecastHead").remove();
       let selectedLocation = document.querySelector(".form-select").value;
+      console.log(selectedLocation)
       fetch(`http://localhost:3000/getweather?q=${selectedLocation}`) //selectedLocation has to be the same as GET request in app.js to fetch imageArray
       .then((data) => data.json())
       .then((jsonData) => {
-        locationHeader.innerHTML += `<h1>${jsonData.closestLocation}</h1>`
-        forecastHeader.innerHTML += `<h1>${jsonData.locationForecast}</h1>`
+        locationHeader.innerHTML += `<h1 class="locationHead">${jsonData.closestLocation}</h1>`
+        forecastHeader.innerHTML += `<h1 class="forecastHead">${jsonData.locationForecast}</h1>`
       })
     }
-
 
   </script>
 </body>
