@@ -157,9 +157,3 @@ pickedTime.addEventListener('change', (f) => {
   }
 
 })
-
-const optionDisplay = document.getElementById("dropDownList")
-
-// fetch("http://localhost:3000/.json")
-// .then(response => response.json())
-// .then(data => console.log(data))

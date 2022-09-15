@@ -1,3 +1,8 @@
+label {
+  font-family: "Lato", sans-serif;
+  font-size: 2rem;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
 }
@@ -33,6 +38,16 @@ span {
 }
 
 /* Reactive Conditions */
+@media (min-width: 767px) {
+  .green {
+    margin-right: 25px;
+  }
+
+  .yellow {
+    margin-right: 25px;
+  }
+}
+
 @media (max-width: 815px) {
 
   /* mobile CSS: hide .desktop div */
@@ -56,6 +71,7 @@ span {
   .nav-link:hover {
     color: #000;
   }
+
 }
 
 @media (max-width: 1199px) {
@@ -83,6 +99,7 @@ span {
     color: #000;
     transform: scale(1.05);
   }
+
 }
 
 /* Navigation Bar Section */
@@ -150,13 +167,10 @@ span {
 }
 
 ::-webkit-datetime-edit-fields-wrapper {
-  background: #fff;
-  border: 1px solid;
   align: center;
 }
 
 ::-webkit-datetime-edit-text {
-  color: #fff;
   padding: 0 0.3em;
 }
 
@@ -192,6 +206,10 @@ span {
   transform: scale(1.25);
 }
 
+.form-control {
+  background-color: white;
+}
+
 /* Location Section */
 #searchAndLogin .btn-group {
   width: 100%;
@@ -209,10 +227,63 @@ span {
   width: 100%;
 }
 
+.carousel-control-prev {
+  border-radius: 100%;
+  opacity: 50%;
+}
+
+.carousel-control-next {
+  border-radius: 100%;
+  opacity: 50%;
+}
+
+.carousel-control-prev-icon{
+ background-color: black;
+ border-radius: 100%;
+ opacity: 95%;
+ width: 20px;
+ height: 20px;
+}
+
+.carousel-control-prev-icon:hover{
+ background-color: black;
+ border-radius: 100%;
+ opacity: 100%;
+}
+
+.carousel-control-next-icon{
+ background-color: black;
+ border-radius: 100%;
+ opacity: 95%;
+ width: 20px;
+ height: 20px;
+}
+
+.carousel-control-next-icon:hover{
+ background-color: black;
+ border-radius: 100%;
+ opacity: 100%;
+}
+
+.carousel-indicators [data-bs-target]{
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  margin: 0 10px 10px 10px;
+}
+
+select {
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;       /* Remove default arrow */
+   background-image: url(https://fontawesome.com/icons/location-dot?s=solid&f=classic);   /* Add custom arrow */
+}
+
 /* Partners Section */
 #partners {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 25rem;
+  padding-bottom: 25rem;
+  background-color: #212121;
 }
 
 /* TESTING CODE */
@@ -222,8 +293,8 @@ span {
 }
 
 #section {
-  background-color: #CDBE78;
-  padding: 5rem 0;
+  background-color: #F9F9F9;
+  padding: 5rem 0 5rem 0;
 }
 
 .trafficPhoto{
@@ -232,15 +303,23 @@ span {
 }
 
 .yellow {
-  background-color: yellow;
+  background-color: #EAEAEA;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px #7F8487;
 }
 
 .red {
-  background-color: red;
+  background-color: #EAEAEA;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px #7F8487;
 }
 
 .green {
-  background-color: green;
+  background-color: #EAEAEA;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px #7F8487;
 }
 
 .left-container {
@@ -249,25 +328,30 @@ span {
 
 .right-container {
   padding: 0;
+  margin-bottom: 0;
 }
 
 .row {
   margin: 0 15px 0 15px;
 }
 
+.datepick {
+  padding: 25px 12px;
+}
+
 /* Footer Section */
 #footer {
   text-align: center;
-  background-color: #212121;
+  background-color: #F9F9F9;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
 
 .footicon {
-  color: #fff;
+  color: #000;
   margin: 25px 25px;
 }
 
 .footicon:hover {
-  color: #fff;
+  color: #000;
 }

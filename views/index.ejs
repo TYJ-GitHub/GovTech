@@ -85,27 +85,26 @@
     <div class="row">
       <div class="left-container col-lg-8 col-md-8">
         <div class="yellow" id="datetimepicker1">
-          Date and Time Picker Container
           <form action="/" method="post">
             <div class="row">
               <div class="datepick col-lg-6">
-                <label for="pickedDate">Select Date</label>
+                <label for="pickedDate"></label>
                 <!-- onchange="this.form.submit() => submit when input changes -->
                 <% if (typeof data != "undefined") { %>
-                <input value="<%=data.date%>" style="font-size: 2rem" id="pickedDate" class="form-control" type="date" name="selecteddate" onchange="this.form.submit()" min="2016-03-01" max="2000-01-13" />
+                <input value="<%=data.date%>" style="font-size: 1rem" id="pickedDate" class="form-control" type="date" name="selecteddate" onchange="this.form.submit()" min="2016-03-01" max="2000-01-13" />
                 <output id="pickedDateSelected" name="datespan"><%=data.datespan%></output>
                 <% }else{ %>
-                <input style="font-size: 2rem" id="pickedDate" class="form-control" type="date" name="selecteddate" onchange="this.form.submit()" min="2016-03-01" max="2000-01-13" />
+                <input style="font-size: 1rem" id="pickedDate" class="form-control" type="date" name="selecteddate" onchange="this.form.submit()" min="2016-03-01" max="2000-01-13" />
                 <output id="pickedDateSelected" name="datespan"></output>
                 <% } %>
               </div>
               <div class="datepick col-lg-6">
-                <label for="pickedTime">Select Time</label>
+                <label for="pickedTime"></label>
                 <% if (typeof data != "undefined") { %>
-                <input value="<%=data.time %>" style="font-size: 2rem" id="pickedTime" class="form-control" type="time" name="selectedtime" onchange="this.form.submit()" max="22:00" />
+                <input value="<%=data.time %>" style="font-size: 1rem" id="pickedTime" class="form-control" type="time" name="selectedtime" onchange="this.form.submit()" max="22:00" />
                 <output id="pickedTimeSelected" name="timespan"><%=data.timespan%></output>
                 <% } else{ %>
-                <input style="font-size: 2rem" id="pickedTime" class="form-control" type="time" name="selectedtime" onchange="this.form.submit()" max="22:00" />
+                <input style="font-size: 1rem" id="pickedTime" class="form-control" type="time" name="selectedtime" onchange="this.form.submit()" max="22:00" />
                 <output id="pickedTimeSelected" name="timespan"></output>
                 <% } %>
 
@@ -114,10 +113,9 @@
           </form>
         </div>
         <div class="green">
-          Location Picker Container
           <div style="padding: 0 27px;" class="container-fluid">
             <div class="col-lg-12">
-              <label for="pickedLocation">Select Location</label>
+              <label for="pickedLocation"></label>
               <select class="form-select" aria-label="Default select example" id="dropDownList" name="location" onchange="getImages(); getWeather()">
               <% if (typeof data != "undefined") { %>
                 <% for (var locImage of data.locImageArray) { %>
@@ -157,7 +155,6 @@
         </div>
       </div>
       <div class="right-container col-lg-4 col-md-4 red">
-        Weather Container
         <div id="locationHeader">
           <h1 class="locationHead"></h1>
         </div>
@@ -175,7 +172,7 @@
 
   <!-- Footer -->
   <section id="footer">
-    <p style="color:white; margin:0">Contact Us</p>
+    <p style="color:black; margin:0">Contact Us</p>
     <i class="grow footicon fa-brands fa-facebook-f"></i>
     <i class="grow footicon fa-brands fa-twitter"></i>
     <i class="grow footicon fa-brands fa-instagram"></i>
@@ -184,7 +181,7 @@
     <i class="grow footicon fa-brands fa-telegram"></i>
     <i class="grow footicon fa-brands fa-tiktok"></i>
     <i class="grow footicon fa-solid fa-rss"></i>
-    <p style="color:white; font-size: 0.75rem">© Copyright 2022 Weather Forecast and Traffic Cam</p>
+    <p style="color:black; font-size: 0.75rem">© Copyright 2022 Weather Forecast and Traffic Cam</p>
   </section>
 
   <script type="text/javascript">
