@@ -216,9 +216,19 @@ span {
 }
 
 /* TESTING CODE */
+#imageContainer {
+  margin-top: 27px;
+  padding: 0 27px 0 27px;
+}
+
 #section {
   background-color: #CDBE78;
   padding: 5rem 0;
+}
+
+.trafficPhoto{
+  width: 100%;
+
 }
 
 .yellow {

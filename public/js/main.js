@@ -66,7 +66,7 @@ pickedDate.addEventListener('change', (e) => {
     mm = d.getMonth(),
     dd = d.getDate()
   let pickedDateVal = e.target.value
-  document.getElementById('pickedDateSelected').innerText = weeks[dnum] + ", " + months[mm] + " " + dd.toString().padStart(2, '0') + ", " + year.firstChild.nodeValue
+  document.getElementById('pickedDateSelected').innerText = weeks[dnum] + ", " + months[mm] + " " + dd.toString().padStart(2, '0') + ", " + yyyy
 })
 
 pickedTime.addEventListener('change', (f) => {
