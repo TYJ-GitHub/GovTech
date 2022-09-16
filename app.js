@@ -30,7 +30,7 @@ function compare( a, b ) { //sort array of objects by string property value
 var str = ''
 let reverseGeoCode = (lat, long) => {
   return new Promise((resolve, reject) => {
-    const apiKey = 'AIzaSyDK7QnWVcLyjIvPrQNOatDO3nb0aWHQWm0';
+    const apiKey = 'AIzaSyAg_sR2ABZM5JYjnTNcf_29D7qELr-DB7A';
     let geo_url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=${apiKey}`
 
     https.get(geo_url, function(response) {
@@ -240,7 +240,7 @@ app.get("/getimages", (req,res) =>{
 });
 
 app.get("/getweather", (req, res) =>{
-  let key = 'AIzaSyDK7QnWVcLyjIvPrQNOatDO3nb0aWHQWm0';
+  let key = 'AIzaSyAg_sR2ABZM5JYjnTNcf_29D7qELr-DB7A';
   let selectedLoc = req.query.q
 
   axios.get("https://maps.googleapis.com/maps/api/geocode/json",{

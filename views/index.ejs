@@ -65,10 +65,10 @@
   <section id="timeDateSection">
     <div class="datetime">
       <div class="time">
-        <span id="hour">00</span>:
-        <span id="minutes">00</span>:
-        <span id="seconds">00</span>
-        <span id="period">AM</span>
+        <span style="font-size: 5rem" id="hour">00</span><span>:</span>
+        <span style="font-size: 3rem" id="minutes">00</span><span>:</span>
+        <span style="font-size: 3rem" id="seconds">00</span>
+        <span style="font-size: 2rem" id="period">AM</span>
       </div>
       <div class="date">
         <span id="dayname">Day</span>,
@@ -88,7 +88,7 @@
           <form action="/" method="post">
             <div class="row">
               <div class="datepick col-lg-6">
-                <label for="pickedDate"></label>
+                <label style="font-size:1.25rem" for="pickedDate">DATE</label>
                 <!-- onchange="this.form.submit() => submit when input changes -->
                 <% if (typeof data != "undefined") { %>
                 <input value="<%=data.date%>" style="font-size: 1rem" id="pickedDate" class="form-control" type="date" name="selecteddate" onchange="this.form.submit()" min="2016-03-01" max="2000-01-13" />
@@ -99,7 +99,7 @@
                 <% } %>
               </div>
               <div class="datepick col-lg-6">
-                <label for="pickedTime"></label>
+                <label style="font-size:1.25rem" for="pickedTime">TIME</label>
                 <% if (typeof data != "undefined") { %>
                 <input value="<%=data.time %>" style="font-size: 1rem" id="pickedTime" class="form-control" type="time" name="selectedtime" onchange="this.form.submit()" max="22:00" />
                 <output id="pickedTimeSelected" name="timespan"><%=data.timespan%></output>
@@ -113,9 +113,9 @@
           </form>
         </div>
         <div class="green">
-          <div style="padding: 0 27px;" class="container-fluid">
+          <div style="padding: 27px 27px;" class="container-fluid">
             <div class="col-lg-12">
-              <label for="pickedLocation"></label>
+              <label style="font-size:1.25rem" for="pickedLocation">LOCATION</label>
               <select class="form-select" aria-label="Default select example" id="dropDownList" name="location" onchange="getImages(); getWeather()">
               <% if (typeof data != "undefined") { %>
                 <% for (var locImage of data.locImageArray) { %>
@@ -155,11 +155,14 @@
         </div>
       </div>
       <div class="right-container col-lg-4 col-md-4 red">
-        <div id="locationHeader">
-          <h1 class="locationHead"></h1>
-        </div>
-        <div id="forecastHeader">
-          <h1 class="forecastHead"></h1>
+        <div style="padding: 27px 27px;" class="weatherContainer">
+          <label style="font-size:1.25rem" for="pickedLocation">WEATHER</label>
+          <div id="locationHeader">
+            <h1 class="locationHead"></h1>
+          </div>
+          <div id="forecastHeader">
+            <h1 class="forecastHead"></h1>
+          </div>
         </div>
       </div>
     </div>
